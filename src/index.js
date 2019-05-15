@@ -14,26 +14,27 @@ class Button extends Component {
 
   render() {
     return (
-      <a href="#" onClick={this.props.onClick} style={{ background: "#911" }}>
+      <button onClick={this.props.onClick} style={{ background: "#911" }}>
         {this.props.children}
-      </a>
+      </button>
     );
   }
 }
 
 class App extends Component {
-  handleClick() {
-    alert("clicked");
-  }
+  state = {
+    counter: 0
+  };
+
+  handleClick = () => {
+    this.setState({ counter: this.state.counter + 1 });
+    // this.setState(state => ({ counter: state.counter + 1 }));
+  };
   render() {
     return (
       <>
-        <h1>Test</h1>
-        <Button
-          onClick={() => {
-            alert("btn1");
-          }}
-        />
+        <h1>Counter</h1>
+        <h2>{this.state.counter}</h2>
         <Button onClick={this.handleClick}>Enviar</Button>
       </>
     );
