@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = props => (
-  <button onClick={props.onClick} style={{ background: '#911' }}>
-    {props.children}
+const Button = ({ onClick, children }) => (
+  <button type="button" onClick={onClick} style={{ background: '#911' }}>
+    {children}
   </button>
 );
 
